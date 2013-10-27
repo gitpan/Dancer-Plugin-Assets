@@ -1,6 +1,6 @@
 package Dancer::Plugin::Assets;
 {
-  $Dancer::Plugin::Assets::VERSION = '1.1';
+  $Dancer::Plugin::Assets::VERSION = '1.2';
 }
 use URI;
 use Dancer::Plugin;
@@ -12,7 +12,7 @@ use File::Assets;
 
 Dancer::Plugin::Assets - Manage and minify .css and .js assets in a Dancer application
 
-=head1: SYNOPSIS
+=head1 SYNOPSIS
 
 # In your Dancer application
 
@@ -87,8 +87,8 @@ The following settings are available:
                    
                    
     minify         # "1" or "best" - Will either use JavaScript::Minifier::XS> & CSS::Minifier::XS or
-                                     JavaScript::Minifier> & CSS::Minifier (depending on availability)
-                                     for minification
+                   #                 JavaScript::Minifier> & CSS::Minifier (depending on availability)
+                   #                 for minification
                    # "0" or "" or undef - Don't do any minfication (this is the default)
                    # "./path/to/yuicompressor.jar" - Will use YUI Compressor via the given .jar for minification
                    # "minifier" - Will use JavaScript::Minifier & CSS::Minifier for minification

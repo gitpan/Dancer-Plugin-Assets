@@ -18,4 +18,4 @@ requires:
   File::Assets: 0
   Test::TCP: 0
   URI: 0
-version: 1.1
+version: 1.2
