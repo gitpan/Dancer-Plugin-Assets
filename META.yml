@@ -17,4 +17,4 @@ requires:
   Dancer::Plugin: 0
   File::Assets: 0
   URI: 0
-version: 1.3
+version: 1.4

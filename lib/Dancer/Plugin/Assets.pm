@@ -1,6 +1,6 @@
 package Dancer::Plugin::Assets;
 {
-  $Dancer::Plugin::Assets::VERSION = '1.3';
+  $Dancer::Plugin::Assets::VERSION = '1.4';
 }
 use URI;
 use Dancer::Plugin;
@@ -194,7 +194,7 @@ hook before_template_render => sub {
     $stash->{css_tags}        = \&_css_tags;
     $stash->{js_tags}         = \&_js_tags;
     $stash->{css_and_js_tags} = \&_css_and_js_tags;
-    $stash->{js_and_css_tags} = \&_css_and_js_tags;
+    $stash->{js_and_css_tags} = \&_js_and_css_tags;
 };
 
 sub _assets {
