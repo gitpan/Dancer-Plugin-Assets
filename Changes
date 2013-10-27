@@ -1,0 +1,28 @@
+Revision history for Perl module Dancer::Plugin::Assets
+
+1.5 2013-10-27
+    
+    - Add Changes-file
+    - Add more information about the methods both 
+      in route code and in tt
+
+1.4 2013-10-26
+
+    - porting the correct coderef to js_and_css_tags
+
+1.3 2013-10-26
+    
+    - Update POD
+
+1.2 2013-10-26
+    
+    - Update POD
+
+1.1 2013-10-26
+    
+    - remove mini files
+
+1 2013-10-26
+    
+    - Initial release
+
