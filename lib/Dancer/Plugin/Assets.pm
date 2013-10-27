@@ -1,6 +1,6 @@
 package Dancer::Plugin::Assets;
 {
-  $Dancer::Plugin::Assets::VERSION = '1.2';
+  $Dancer::Plugin::Assets::VERSION = '1.3';
 }
 use URI;
 use Dancer::Plugin;
@@ -14,18 +14,18 @@ Dancer::Plugin::Assets - Manage and minify .css and .js assets in a Dancer appli
 
 =head1 SYNOPSIS
 
-# In your Dancer application
+=head3 In your Dancer application
 
-use Dancer::Plugin::Assets "add_asset";
+ use Dancer::Plugin::Assets "add_asset";
 
-# Sometime during the request ...
+=head3 Sometime during the request ...
 
-get "/index" => sub {
+ get "/index" => sub {
     add_asset "/css/beautiful.css";
     add_asset "/css/handlebars.js";
-};
+ };
 
-# Then, in your .tt, print css tags at <head>, print js tags after body
+=head3 Then, in your .tt, print css tags at <head>, print js tags after body
 
   <html>
     <head><title>[% title %]</title>
@@ -37,7 +37,7 @@ get "/index" => sub {
     [% js_tags %]
   </html>
 
-# Or you want all css and js tags inside <head>
+=head3 Or you want all css and js tags inside <head>
 
   <html>
     <head><title>[% title %]</title>
@@ -52,7 +52,7 @@ get "/index" => sub {
 
 =head1 DESCRIPTION
 
-Dancer::Plugin::Assets integrates File::Assets into your Dancer application. Essentially, it provides a unified way to include .css and .js assets from different parts of your program. When you're done processing a request, you can use var("assets")->export() to generate HTML or var("assets")->exports() to get a list of assets.
+Dancer::Plugin::Assets integrates File::Assets into your Dancer application. Essentially, it provides a unified way to include .css and .js assets from different parts of your program. When you're done processing a request, you can use assets)->export() or [% css_and_js_tags %] to generate HTML or var("assets")->exports() to get a list of assets.
 
 D::P::Assets will also handle .css files of different media types properly.
 
@@ -62,11 +62,15 @@ Note that Dancer::Plugin::Assets does not serve files directly, it will work wit
 
 =head1 USEAGE
 
-For usage hints and tips, see File::Assets
+For usage hints and tips, see L<File::Assets>
 
 =head1 CONFIGURATION
 
-You can configure D::P::Assets by manipulating the environment configration file e.g. config.yml, environments/development.yml or environments/production.yml
+You can configure D::P::Assets by manipulating the environment configration files, e.g.
+
+    config.yml
+    environments/development.yml
+    environments/production.yml
 
 The following settings are available:
 
@@ -105,14 +109,14 @@ Here is an example configuration: ( All the value are set by default )
         Assets:
             base_dir: "/public"
             output_dir: "static/%n%-l.%e"
-            minify: 1,
+            minify: 1
             minified_name: "minified"
 
 =head1 METHODS
 
 =head2 assets
 
-Return the File::Assets object that exists throughout the lifetime of the request
+Return L<File::Assets> object that exists throughout the lifetime of the request
 
 =head1 AUTHOR
 
@@ -159,8 +163,6 @@ L<https://bitbucket.org/mvu8912/p5-dancer-plugin-assets>
 =head1 SEE ALSO
 
 L<File::Assets>
-
-L<Dancer>
 
 L<Dancer::Plugin>
 

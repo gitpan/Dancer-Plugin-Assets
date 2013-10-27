@@ -16,6 +16,5 @@ requires:
   Dancer: 0
   Dancer::Plugin: 0
   File::Assets: 0
-  Test::TCP: 0
   URI: 0
-version: 1.2
+version: 1.3
