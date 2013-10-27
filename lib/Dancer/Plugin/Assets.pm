@@ -1,6 +1,6 @@
 package Dancer::Plugin::Assets;
 {
-  $Dancer::Plugin::Assets::VERSION = '1';
+  $Dancer::Plugin::Assets::VERSION = '1.1';
 }
 use URI;
 use Dancer::Plugin;
@@ -12,7 +12,7 @@ use File::Assets;
 
 Dancer::Plugin::Assets - Manage and minify .css and .js assets in a Dancer application
 
-=head SYNOPSIS
+=head1: SYNOPSIS
 
 # In your Dancer application
 
@@ -114,6 +114,71 @@ Here is an example configuration: ( All the value are set by default )
 
 Return the File::Assets object that exists throughout the lifetime of the request
 
+=head1 AUTHOR
+
+Michael Vu, C<< <micvu at cpan.org> >>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to C<bug-dancer-plugin-assets at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Dancer::Plugin::Assets>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc Dancer::Plugin::Assets
+
+You can also look for information at:
+
+=over 4
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dancer-Plugin-Assets>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/Dancer-Plugin-Assets>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/Dancer-Plugin-Assets>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/Dancer-Plugin-Assets>
+
+=item * GIT Respority
+
+L<https://bitbucket.org/mvu8912/p5-dancer-plugin-assets>
+
+=back
+
+=head1 SEE ALSO
+
+L<File::Assets>
+
+L<Dancer>
+
+L<Dancer::Plugin>
+
+L<http://developer.yahoo.com/yui/compressor/>
+
+L<JavaScript::Minifier::XS>
+
+L<CSS::Minifier::XS>
+
+L<JavaScript::Minifier>
+
+L<CSS::Minifier>
+
+=head1 ACKNOWLEDGEMENTS
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
 =cut
 
 register assets              => \&_assets;
@@ -162,13 +227,13 @@ sub _js_tags {
 sub _build_assets {
     my $setting = plugin_setting();
 
-    ## https://metacpan.org/pod/File::Assets#METHODS
     my $url           = _url( $setting->{url} );
     my $base_dir      = $setting->{base_dir} || setting "public";
     my $output_dir    = $setting->{output_dir} || "static/%n%-l.%e";
     my $minify        = defined $setting->{minify} ? $setting->{minify} : 1;
     my $minified_name = $setting->{minified_name} || "minified";
 
+    ## https://metacpan.org/pod/File::Assets#METHODS
     my $assets = File::Assets->new(
         name        => $minified_name,
         minify      => $minify,

@@ -23,10 +23,11 @@ my %WriteMakefileArgs = (
     "Dancer" => 0,
     "Dancer::Plugin" => 0,
     "File::Assets" => 0,
-    "Test::TCP" => 0
+    "Test::TCP" => 0,
+    "URI" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => 1,
+  "VERSION" => "1.1",
   "test" => {
     "TESTS" => "t/*.t"
   }
