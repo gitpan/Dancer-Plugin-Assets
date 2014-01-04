@@ -210,7 +210,7 @@ under the same terms as Perl itself.
 
 package Dancer::Plugin::Assets;
 {
-  $Dancer::Plugin::Assets::VERSION = '1.5';
+  $Dancer::Plugin::Assets::VERSION = '1.51';
 }
 use URI;
 use Dancer::Plugin;

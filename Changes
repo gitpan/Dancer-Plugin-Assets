@@ -1,5 +1,9 @@
 Revision history for Perl module Dancer::Plugin::Assets
 
+1.51 2014-01-04
+    - Bugfix - Fix broken test
+    - Bugfix - Add missing dependency
+
 1.5 2013-10-27
     
     - Add Changes-file
