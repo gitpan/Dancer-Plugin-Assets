@@ -1,5 +1,9 @@
 Revision history for Perl module Dancer::Plugin::Assets
 
+1.52 2014-02-06
+    - Add XS version of minifier to Makefile
+    - Using cucumber test
+
 1.51 2014-01-04
     - Bugfix - Fix broken test
     - Bugfix - Add missing dependency

@@ -22,14 +22,19 @@ my %WriteMakefileArgs = (
   "NAME" => "Dancer::Plugin::Assets",
   "PREREQ_PM" => {
     "CSS::Minifier" => 0,
+    "CSS::Minifier::XS" => 0,
     "Dancer" => 0,
     "Dancer::Plugin" => 0,
     "File::Assets" => 0,
     "JavaScript::Minifier" => 0,
+    "JavaScript::Minifier::XS" => 0,
     "URI" => 0
   },
-  "TEST_REQUIRES" => {},
-  "VERSION" => "1.51",
+  "TEST_REQUIRES" => {
+    "Test::Cucumber::Tiny" => 0,
+    "Test::More" => 0
+  },
+  "VERSION" => "1.52",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -38,10 +43,14 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "CSS::Minifier" => 0,
+  "CSS::Minifier::XS" => 0,
   "Dancer" => 0,
   "Dancer::Plugin" => 0,
   "File::Assets" => 0,
   "JavaScript::Minifier" => 0,
+  "JavaScript::Minifier::XS" => 0,
+  "Test::Cucumber::Tiny" => 0,
+  "Test::More" => 0,
   "URI" => 0
 );
 
